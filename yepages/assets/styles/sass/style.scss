@@ -1,2 +1,41 @@
 @import "reset.scss";
 @import "vars.scss";
+
+header{
+    height: 15vh;
+    padding: auto;
+    width: 100vw;
+    > h1{
+        font-size: 3rem;
+        font-weight: bold;
+        color: darkblue;
+        text-align: center;
+    }
+}
+
+main{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    width: 90vw;
+    margin: auto;
+    > section{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        padding: 40px;
+        border: 1px solid black;
+        border-radius: 10px;
+        > h2{
+            font-size: 2rem;
+            font-weight: bold;
+            color: darkblue;
+            margin-bottom: 40px;
+        }
+        > form{
+            > input{
+                margin-bottom: 20px;
+            }  
+        } 
+    }
+}
