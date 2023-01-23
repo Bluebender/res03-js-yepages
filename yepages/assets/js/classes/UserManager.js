@@ -69,5 +69,8 @@ class UserManager {
             this.#users.push(user);
         }
     }
+    login(email, password){
+        
+    }
 }
 export { UserManager };
