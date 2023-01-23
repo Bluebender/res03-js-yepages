@@ -48,16 +48,25 @@ class BookManager {
             }
         }
         return byYearList
-        
     }
     createBook(book){
-        
+        this.#books.push(book);
     }
     deleteBook(bookId){
-        
+        let booksListWithoutId = [];
+        for (let i=0; i<this.#books.length; i++){
+            if (this.#books[i].id!==bookId){
+                booksListWithoutId.push(this.#books[i]);
+            }
+        }
+        this.#books = booksListWithoutId
     }
     editBook(book){
-        
+        for (let i=0; i<this.#books.length; i++){
+            if (book.id === this.#books[i].id){
+                this.#books[i] = book;
+            }
+        }
     }
     save(){
         sessionStorage.setItem("booksBackup", JSON.stringify(this.#books));

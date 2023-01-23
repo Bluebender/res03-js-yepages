@@ -27,7 +27,16 @@ window.addEventListener("DOMContentLoaded", function(){
     // console.log(newManage.findBookById(2))
     // console.log(newManage.findBooksByTitle("Le roi lion"));
     // console.log(newManage.findBooksByAuthor("Disney"));
-    console.log(newManage.findBooksByPublicationYear(2012));
+    // console.log(newManage.findBooksByPublicationYear(2012));
+    // let newBook = new Book(0, "Ratatouille", "Disney", 2011, 134, "Il était une fois...", "assets/img/image9.png");
+    // newManage.createBook(newBook);
+    // console.log(newManage)
 
-
+    // newManage.deleteBook(1);
+    // console.log(newManage)
+    
+    // let newBook = new Book(1, "Ratatouille", "Disney", 2011, 134, "Il était une fois...", "assets/img/image9.png");
+    // newManage.editBook(newBook)    
+    // console.log(newManage)
+ 
 });
