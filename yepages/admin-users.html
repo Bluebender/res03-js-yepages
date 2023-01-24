@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="fr" prefix="og: https://ogp.me/ns#">
+<head>
+    <!--Encodage des caractères-->
+    <meta charset="utf-8">
+    <!--Titre affiché dans l'onglet-->
+    <title>Mini Projet Interface d'Administration</title>
+
+    <!--Titre de la page-->
+    <meta name="title" content="Cinépotes - critique cinéma"/>
+    <!--Déscription de la page-->
+    <meta name="description" content="Critique cinématographique des meilleurs films"/>
+    <!--Mots clés-->
+    <meta name="keywords" content="critique,cinéma,films,actualité,meilleurs,movies,écran"/>
+    <!--Auteur-->
+    <meta name="author" content="Mari Doucet"/>
+    <!--Quand votre page en appelle une autre, cette nouvelle page pourra savoir de qui vient la demande, origin permet de dire que vous envoyez le strict minimum, l'url de base du site d'origine.-->
+    <meta name="referrer" content="origin"/>
+    
+    <!--Metadonnées Open Graph-->
+    <!--Title-->
+    <meta property="og:title" content="Cinépotes - critique cinéma"/>
+    <!--Type-->
+    <meta property="og:type" content="article"/>
+    <!--Image-->
+    <meta property="og:image" content="https://ia.media-imdb.com/images/rock.jpg" />
+    <!--URL-->
+    <meta property="og:url" content="https://www.imdb.com/title/tt0117500/"/>
+    <!--Description-->
+    <meta property="og:description" content="Critique cinématographique des meilleurs films"/>
+    <!--Local-->
+    <meta property="og:locale" content="fr_FR"/>
+    <!--Site name-->
+    <meta property="og:site_name" content="Cinépotes"/>
+    
+    <!--Taille de l'écran-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--Lien vers la feuille de style-->
+    <link rel="stylesheet" href="assets/styles/css/style.css">
+    <!--Librairie Fontawesome-->
+    <script src="https://kit.fontawesome.com/dbf8b52bf4.js" crossorigin="anonymous"></script>
+
+
+    <!--Police d'écriture -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    
+</head>
+
+<body id="adminUsersPage">
+  <header>
+    <section id="section_header">
+      <span id="btn_nav" class="fa-solid fa-chevron-left"></span>
+      <figure>
+        <img src="assets/images/logo.svg"></img>
+      </figure>
+    </section>
+    <nav>
+      
+    </nav>
+  </header>
+
+  <main>
+    <aside id="menu_nav">
+      <nav>
+        <h2 id="btn_utilisateur">UTILISATEURS <span class="fa-solid fa-chevron-down"></span></h2>
+        <ul id="menu_utilisateur" class="hidden">
+          <li>LISTE DES UTILISATEURS</li>
+          <li>AJOUTER UN UTILISATEUR</li>
+          <li>STATISTIQUES UTILISATEURS</li>
+        </ul>
+      </nav>
+      <nav>
+        <h2 id="btn_produits">PRODUITS <span class="fa-solid fa-chevron-down"></span></h2>
+        <ul id="menu_produits" class="hidden">
+          <li>LISTE DES PRODUITS</li>
+          <li>AJOUTER UN PRODUIT</li>
+          <li>STATISTIQUES DES PRODUITS</li>
+        </ul>
+      </nav>
+      <nav>
+        <h2 id="btn_categorie">CATÉGORIES <span class="fa-solid fa-chevron-down"></span></h2>
+        <ul id="menu_categorie" class="hidden">
+          <li>LISTE DES CATÉGORIES DE PRODUITS</li>
+          <li>AJOUTER UNE CATÉGORIE DE PRODUITS</li>
+        </ul>
+      </nav>
+    </aside>
+    <section id="section1">
+        <h2>Liste des utilisateurs</h2>
+        <section>
+            <h3 class="sr-only">Ajouter un utilisateur</h3>
+            <button class="add-btn" id="add-user-btn"><span class="bi-person-fill-add"></span> Ajouter un utilisateur</button>
+        </section>
+        <section>
+            <h3 class="sr-only">Les données</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            #
+                        </th>
+                        <th>
+                            Nom
+                        </th>
+                        <th>
+                            Age
+                        </th>
+                        <th>
+                            Actif
+                        </th>
+                        <th>
+                            Actions
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                    <!--<tr>-->
+                    <!--    <td>-->
+                    <!--        0-->
+                    <!--    </td>-->
+                    <!--    <td>-->
+                    <!--        Marsh Obrien-->
+                    <!--    </td>-->
+                    <!--    <td>-->
+                    <!--        24-->
+                    <!--    </td>-->
+                    <!--    <td>-->
+                    <!--        <span class="bi-person-fill-down" aria-labelledby="Inactif"></span>-->
+                    <!--    </td>-->
+                    <!--    <td>-->
+                    <!--        <a href=""><span class="bi-eye" aria-labelledby="Voir l'utilisateur"></span></a>-->
+                    <!--        <a href=""><span class="bi-pen" aria-labelledby="Modifier l'utilisateur"></span></a>-->
+                    <!--        <button class="delete-user" data-user="0"><span class="bi-trash3" aria-labelledby="Supprimer l'utilisateur"></span></button>-->
+                    <!--    </td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--    <td>-->
+                    <!--        1-->
+                    <!--    </td>-->
+                    <!--    <td>-->
+                    <!--        Marsh Obrien-->
+                    <!--    </td>-->
+                    <!--    <td>-->
+                    <!--        24-->
+                    <!--    </td>-->
+                    <!--    <td>-->
+                    <!--        <span class="bi-person-fill-up" aria-labelledby="Actif"></span>-->
+                    <!--    </td>-->
+                    <!--    <td>-->
+                    <!--        <a href=""><span class="bi-eye" aria-labelledby="Voir l'utilisateur"></span></a>-->
+                    <!--        <a href=""><span class="bi-pen" aria-labelledby="Modifier l'utilisateur"></span></a>-->
+                    <!--        <button class="delete-user" data-user="1"><span class="bi-trash3" aria-labelledby="Supprimer l'utilisateur"></span></button>-->
+                    <!--    </td>-->
+                    <!--</tr>-->
+                </tbody>
+            </table>
+        </section>
+    </section>
+    <section id="section2" class="masked">
+      <article>
+        <header>Êtes-vous sûr-e de vouloir supprimer cet utilisateur ?</header>
+        <p id="userToDelete"></p>
+        <footer>
+          <button id="boutonAnnulerSuppression">Annuler</button>
+          <button>Supprimer</button>
+        </footer>
+      </article>      
+    </section>
+  </main>
+
+<script type="application/javascript" src="assets/js/adminjs/index.js"></script>
+<script type="application/javascript" src="assets/js/adminjs/index2.js"></script>
+<script type="application/javascript" src="assets/js/adminjs/index3.js"></script>
+</body>
+</html>
