@@ -10,7 +10,6 @@ window.addEventListener("DOMContentLoaded", function(){
 
     // Affichage des utilisateurs
     for (let i=0; i<newUserManage.users.length; i++){
-        console.log(newUserManage.users[i].username)
         let tr = document.createElement("tr");
     
         let td1 = document.createElement("td");
@@ -63,6 +62,60 @@ window.addEventListener("DOMContentLoaded", function(){
         tbody.appendChild(tr);
 
     }
+
+
+    // Supprimer un utilisateur
+    
+    let buttons_supprimer = document.getElementsByClassName("delete-user");
+    let users = document.querySelectorAll("table > tbody > tr > td:nth-of-type(2)");
+    console.log(users);
+    let usersId = document.querySelectorAll("table > tbody > tr > td:nth-of-type(1)");
+    console.log(usersId);
+    let section1 = document.getElementById("section1");
+    let section2 = document.getElementById("section2");
+    let userToDelete = document.getElementById("userToDelete");
+    let idToDelete
+
+    // Je detecte l'appuie sur l'un des boutons supprimer et affiche la section de suppression
+    for (let i=0; i<users.length; i++){
+        buttons_supprimer[i].addEventListener("click", function(){
+            // Je masque la section 1 (tableau)
+            section1.classList.toggle("masked");
+            // Je fait apparaitre la section 2 (le message de supression)
+            section2.classList.toggle("masked");
+            // J'implemente le nom de l'utilisateur dans le message de suppression
+            userToDelete.innerHTML= users[i].textContent;
+            idToDelete = usersId[i].textContent;
+
+        });
+    }        
+    let boutonAnnulerSuppression = document.getElementById("boutonAnnulerSuppression");
+    boutonAnnulerSuppression.addEventListener("click", function(){
+        // Je masque la section 1 (tableau)
+        section2.classList.toggle("masked");
+        // Je fait apparaitre la section 2 (le message de supression)
+        section1.classList.toggle("masked");
+        
+    });
+    let boutonValiderSuppression = document.getElementById("boutonValiderSuppression");
+    boutonValiderSuppression.addEventListener("click", function(){
+        newUserManage.deleteUser(idToDelete);
+        console.log(newUserManage)
+        newUserManage.save();
+        // Je masque la section 1 (tableau)
+        section2.classList.toggle("masked");
+        // Je fait apparaitre la section 2 (le message de supression)
+        section1.classList.toggle("masked");
+    });
+
+
+
+
+    
+
+
+
+
 
 });
 

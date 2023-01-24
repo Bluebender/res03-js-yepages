@@ -3,13 +3,14 @@
 window.addEventListener("DOMContentLoaded", function(){
 
     let buttons_supprimer = document.getElementsByClassName("delete-user");
-    let users = document.querySelectorAll("table > tbody > tr > td:nth-of-type(2)");
+    let sers = document.querySelectorAll("table > tbody > tr > td:nth-of-type(2)");
+    console.log(sers);
     let section1 = document.getElementById("section1");
     let section2 = document.getElementById("section2");
     let userToDelete = document.getElementById("userToDelete");
 
     // Je detecte l'appuie sur l'un des boutons supprimer et affiche la section de suppression
-    for (let i=0; i<users.length; i++){
+    for (let i=0; i<sers.length; i++){
         buttons_supprimer[i].addEventListener("click", function(){
             // Je masque la section 1 (tableau)
             section1.classList.toggle("masked");

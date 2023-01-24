@@ -12,6 +12,7 @@ class UserManager {
     set users(users) {
         this.#users = users;
     }
+
     findAllUsers(){
         return this.#users;
     }
@@ -70,6 +71,8 @@ class UserManager {
     deleteUser(userId){
         let usersListWithoutId = [];
         for (let i=0; i<this.#users.length; i++){
+            console.log(this.#users[i].id)
+            console.log(userId)
             if (this.#users[i].id!==userId){
                 usersListWithoutId.push(this.#users[i]);
             }
