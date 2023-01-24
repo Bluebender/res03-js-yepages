@@ -48,7 +48,6 @@ class UserManager {
         let userFirstName = document.getElementById("firstName").value;
         let userLastName = document.getElementById("lastName").value;
         let userProfileImage = document.getElementById("url").value;
-        
 
         let doublonEmail=false
         for (let i=0; i<this.#users.length; i++){
@@ -64,9 +63,7 @@ class UserManager {
             alert("L'adresse email existe déjà");
         }
         else{
-            
             let user = new User(userId, userUsername, userEmail, userPassword, userFirstName, userLastName, userProfileImage)
-    
             this.#users.push(user);
         }
     }
@@ -87,11 +84,11 @@ class UserManager {
         }
     }
     save(){
-        sessionStorage.setItem("usersBackup", JSON.stringify(this.#users));
+        localStorage.setItem("usersBackup", JSON.stringify(this.#users));
     }
     load(){
         // Je recupère la sauvegarde et je parse le tableau
-        let usersBackup = JSON.parse(sessionStorage.getItem("usersBackup"));
+        let usersBackup = JSON.parse(localStorage.getItem("usersBackup"));
 
         // Je parse chaque élément du tableau
         if (usersBackup===null){
@@ -105,7 +102,7 @@ class UserManager {
             }
         }
     }
-    login(email, password){
+    login(){
         let userEmail = document.getElementById("connexionEmail").value;
         let userPassword = document.getElementById("connexionPassword").value;
         for (let i=0; i<this.#users.length; i++){
