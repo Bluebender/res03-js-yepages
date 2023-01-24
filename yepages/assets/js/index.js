@@ -39,15 +39,17 @@ window.addEventListener("DOMContentLoaded", function(){
     // let newBook = new Book(1, "Ratatouille", "Disney", 2011, 134, "Il était une fois...", "assets/img/image9.png");
     // newManage.editBook(newBook)    
     // console.log(newManage)
-    
     let users = [];
     let newUserManage = new UserManager(users);
-    
+
     let creationForm = document.getElementById("creationForm");
     creationForm.addEventListener("submit", function(event){
         event.preventDefault();
         
-        let userId =users.length;
+        
+        
+        
+        let userId =users.length+1;
         let userUsername = document.getElementById("userName").value;
         let userEmail = document.getElementById("email").value;
         let userPassword = document.getElementById("password").value;
@@ -56,18 +58,30 @@ window.addEventListener("DOMContentLoaded", function(){
         let userLastName = document.getElementById("lastName").value;
         let userProfileImage = document.getElementById("url").value;
         
+        newUserManage.save();
+        newUserManage.load();
+        let doublonEmail=false
+        for (let i=0; i<newUserManage.users.length; i++){
+            if (newUserManage.users[i].email===userEmail){
+                doublonEmail=true;    
+            }
+        }
+
         if (userPassword!==userSecondPassword){
-            alert("Les deux mots de passe ne sont pas identiques")
+            alert("Les deux mots de passe ne sont pas identiques");
+        }
+        else if (doublonEmail===true){
+            alert("L'adresse email existe déjà");
         }
         else{
+            
         let user = new User(userId, userUsername, userEmail, userPassword, userFirstName, userLastName, userProfileImage)
-        console.log(user);
-        
+
         newUserManage.createUser(user);
-        console.log(newUserManage);
-        
+        newUserManage.load();
+        newUserManage.save();
         }
-        
+
         
     });
     

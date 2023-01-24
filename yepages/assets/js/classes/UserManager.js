@@ -1,3 +1,5 @@
+import { User } from './User.js';
+
 class UserManager {
     #users;
 
@@ -65,7 +67,7 @@ class UserManager {
         // Je parse chaque élément du tableau
         for (let i=0; i<usersBackup.length; i++){
             let userBackup = JSON.parse(usersBackup[i]);
-            let user = new user(userBackup.id, userBackup.username, userBackup.email, userBackup.password, bookBackup.firstName, bookBackup.lastName, bookBackup.profileImage);
+            let user = new User(userBackup.id, userBackup.username, userBackup.email, userBackup.password, userBackup.firstName, userBackup.lastName, userBackup.profileImage);
             this.#users.push(user);
         }
     }
